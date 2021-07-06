@@ -1,0 +1,18 @@
+
+<form action="/login" method="POST">
+
+   <div class="login-page">
+    <div class="form">
+      <form class="register-form forms">
+        <input name="username" type="text" placeholder="Username" />
+        <input name="password" type="password" placeholder="password" />
+        <button type="submit">Login</button>
+      </form>
+      <div>
+        
+      </div>
+{{#if errorMessage}}
+  <p>{{errorMessage}}</p>
+{{/if}}
+
+<p>Don't have an account? Signup <a href="/signup">here</a></p>

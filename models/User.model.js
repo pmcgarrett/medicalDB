@@ -4,9 +4,28 @@ const { Schema, model } = require("mongoose");
 const userSchema = new Schema({
   username: {
     type: String,
-    // unique: true -> Ideally, should be unique, but its up to you
+    required: true,
+    unique: true,
   },
-  password: String,
+  name: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  imageUrl: String,
+  role: {
+    type: String,
+    enum: ["admin", "user", "doctor"],
+    default: "user",
+  },
+  age: Number,
+  sex: {
+    type: String,
+    enum: ["male", "female"],
+  },
 });
 
 const User = model("User", userSchema);
