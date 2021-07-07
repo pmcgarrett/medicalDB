@@ -67,17 +67,24 @@
               <img src="/images/user.png" alt="">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li> <a class="dropdown-item" href="/login" tabindex="-1" aria-disabled="true">Login</a> </li>
+              
+              {{#if loggedInUser}}
+              <li> <a class="dropdown-item" href="/user-create" tabindex="-1" aria-disabled="true">edit account</a> </li>    
+              <form action="/logout" method="POST">
               <li><hr class="dropdown-divider" /></li>
+              <button id="logout" type="submit">Logout</button>
+              {{else}}
               <li> <a class="dropdown-item" href="/signup" tabindex="-1" aria-disabled="true">Sign Up</a> </li>
+              <li><hr class="dropdown-divider" /></li>
+               <li> <a class="dropdown-item" href="/login" tabindex="-1" aria-disabled="true">Login</a> </li>
+               {{/if}}
             </ul>
           </li>
 
           <li class="nav-item">
             {{#if loggedInUser}}
-            {{loggedInUser.name}}
-            <form action="/logout" method="POST">
-            <button type="submit">Logout</button>
+             {{loggedInUser.name}}
+
           {{/if}}
           </li>
         </ul>
