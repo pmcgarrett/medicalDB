@@ -1,0 +1,15 @@
+<a href="/">main </a><a href="/view">> pathology</a><a href="/view/{{pathology}}">> organ</a>
+
+<h1>{{pathology}}</h1>
+
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            {{#each allOrgans}}
+            <div><a href="/view/{{../pathology}}/{{this}}">{{this}}</a></div>
+            {{/each}}
+        </li>
+
+    </ul>
+</div>
