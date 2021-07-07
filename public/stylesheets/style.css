@@ -16,6 +16,11 @@ h1 {
   
 }
 
+.h1, h1 {
+    font-style: initial;
+    font-family: -webkit-body;
+}
+
 img.logo {
     height: 50px;
     margin-right: 25px;
@@ -80,7 +85,13 @@ body {
     margin: 35px auto -1px;
     padding: -7px;
     box-shadow: 0 0 20px -1 rgb(0 0 0 / 70%), 0 128px 107px 0 rgb(0 0 0 / 24%);
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+    
 }
+
+
 
 .form input {
   border-radius: 50px;
@@ -103,7 +114,7 @@ body {
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+  background-image: linear-gradient(to right, #8a85bb 0%, #a6c1ee 51%, #5746f1 100%);
   width: 100%;
   border: 0;
   padding: 6px;
