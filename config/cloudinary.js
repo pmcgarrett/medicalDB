@@ -16,7 +16,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: "books",
+    folder: "Tumors",
     allowed_formats: ["png", "jpg"],
   },
   filename: function (req, file, cb) {

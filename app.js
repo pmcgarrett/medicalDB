@@ -72,6 +72,9 @@ app.use("/", auth);
 const pathology = require("./routes/pathology");
 app.use("/", pathology);
 
+const entity = require("./routes/entity");
+app.use("/", entity);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

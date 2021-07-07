@@ -1,0 +1,37 @@
+<h1>Create an entity</h1>
+
+<form class="mh-100" style="width: 400px; height: 200px; margin: 10px"
+    action="/create/{{pathology}}/{{organ}}/{{type}}/{{subtype}}" enctype="multipart/form-data" method="POST">
+
+    </div>
+    <div class="form-group" style="margin: 10px">
+        <label>pathology</label>
+        <input type="text" class="form-control" name="pathology" value="{{pathology}}" readonly>
+    </div>
+    <div class="form-group" style="margin: 10px">
+        <label>Organ</label>
+        <input type="text" class="form-control" name="organ" value="{{organ}}" readonly>
+    </div>
+    <div class="form-group" style="margin: 10px">
+        <label>Type</label>
+        <input type="text" class="form-control" name="type" value="{{type}}" readonly>
+    </div>
+    <div class="form-group" style="margin: 10px">
+        <label>Subtype</label>
+        <input type="text" class="form-control" name="subtype" value={{subtype}} readonly>
+    </div>
+
+    <div class="form-group" style="margin: 10px">
+        <label for="name">Entity</label>
+        <input type="text" id="name" class="form-control" name="entity" required>
+    </div>
+    <div class="form-group" style="margin: 10px">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" rows="3" name="description" required></textarea>
+    </div>
+
+    <label for="image">Image</label>
+    <input class="form-control" type="file" name="image" id="image">
+
+    <button type="submit" style="margin: 10px" class="btn btn-success">Create</button>
+</form>

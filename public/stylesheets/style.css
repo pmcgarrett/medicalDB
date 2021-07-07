@@ -65,12 +65,13 @@ body {
     border-width: 0;
     outline: none;
     border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, .6);
     background-color: #ff8a16;
     padding: 2px;
   }
+
   form {
-    width: 50%;
+    width: 60%;
     justify-self: center;
     text-align: center;
   }
@@ -81,7 +82,7 @@ body {
 
     position: left;
     z-index: 1;
-    max-width: 209px;
+    max-width: 252px;
     margin: 35px auto -1px;
     padding: -7px;
     box-shadow: 0 0 20px -1 rgb(0 0 0 / 70%), 0 128px 107px 0 rgb(0 0 0 / 24%);
@@ -179,4 +180,42 @@ select {
     border: none;
     margin-left: 30px;
     font-style: inherit;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    font-variant: all-small-caps;
+    font-size: small;
+}
+
+button#logout {
+    border: none;
+    background-color: transparent;
+    padding-left: 16px;
+    font-size: 16px;
+}
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -43px;
+    margin-top: .125rem;
+}
+.dropdown-menu {
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
 }
