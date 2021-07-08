@@ -2,13 +2,13 @@
   <div class="login-page">
     <div class="form">
 
-      <input name="name" type="text" placeholder="Name" />
-      <input name="password" type="password" placeholder="password" />
-      <input name="age" type="text" placeholder="age" />
+      <input name="name" type="text" value={{name}} />
+      {{!-- <input name="password" type="password" placeholder="password" /> --}}
+      <input name="age" type="text" value={{age}} />
 
       <div class="bt2">
         <label for="sex">sex:</label>
-        <select name="sex" id="sex">
+        <select name="sex"> value={{sex}}>
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>

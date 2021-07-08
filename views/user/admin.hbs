@@ -1,0 +1,12 @@
+<h1> Admin Page </h1>
+
+{{#each allUsers}}
+<h2> {{username}} </h2>
+
+<a href="/user/edit/{{_id}}"> edit</a>
+
+<form action="/user/delete/{{_id}}" method="post">
+    <button type="submit">delete</button>
+</form>
+
+{{/each}}

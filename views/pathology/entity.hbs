@@ -1,0 +1,28 @@
+<a href="/">main </a><a href="/view">> pathologies</a><a href="/view/{{pathology}}">> organs</a>
+<a href="/view/{{pathology}}/{{organ}}">> types</a><a href="/view/{{pathology}}/{{organ}}/{{type}}">> subtypes</a>
+<a href="/view/{{pathology}}/{{organ}}/{{type}}/{{subtype}}">> entities</a>
+
+
+<h1>{{subtype}}</h1>
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            {{#each allEntities }}
+            <div class="d-flex flex-row justify-content-between">
+                <a href="/view/{{../pathology}}/{{../organ}}/{{../type}}/{{../subtype}}/{{this}}">{{this}}</a>
+                <form action="/delete/{{../pathology}}/{{../organ}}/{{../type}}/{{../subtype}}/{{this}}" method="POST">
+                    <button type="submit" style="border: none; background-color: white;">
+                        <img style=" " src="/images/delete_btn.jpg" alt="">
+                    </button>
+                </form>
+
+            </div>
+            {{/each}}
+        </li>
+
+    </ul>
+</div>
+<br>
+<a class="btn btn-success" href="/create/{{pathology}}/{{organ}}/{{type}}/{{subtype}}" role="button">Create a new
+    Entity</a>

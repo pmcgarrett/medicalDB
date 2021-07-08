@@ -1,0 +1,15 @@
+<a href="/">main </a><a href="/view">> pathologies</a><a href="/view/{{pathology}}">> organs</a>
+<a href="/view/{{pathology}}/{{organ}}">> types</a><a href="/view/{{pathology}}/{{organ}}/{{type}}">> subtypes</a>
+<a href="/view/{{pathology}}/{{organ}}/{{type}}/{{subtype}}">> entities</a>
+<a href="/view/{{pathology}}/{{organ}}/{{type}}/{{subtype}}/{{entity}}">> {{entity}}</a>
+
+
+<div class="card d-flex flex-row" style="width: 55rem; height: 25rem;">
+    <img class="card-img-top" style="width: 35rem;" src=" {{macroImg}}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{entity}}</h5>
+        <p class="card-text">{{description}}</p>
+        <a class="btn btn-success" href="/update/{{pathology}}/{{organ}}/{{type}}/{{subtype}}/{{entity}}"
+            role="button">Edit</a>
+    </div>
+</div>
