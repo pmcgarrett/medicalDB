@@ -72,22 +72,22 @@ body {
   }
 
   form {
-    width: 60%;
+    /* width: 60%; */
     justify-self: center;
     text-align: center;
   }
 
 
 .form {
-  position: left;
-  z-index: 1;
-  max-width: 252px;
-  margin: 35px auto -1px;
-  padding: -7px;
-  box-shadow: 0 0 20px -1 rgb(0 0 0 / 70%), 0 128px 107px 0 rgb(0 0 0 / 24%);
-  background-color: white;
-  padding: 50px;
-  border-radius: 20px;
+    position: left;
+    z-index: 1;
+    max-width: 252px;
+    margin: 35px auto -1px;
+    padding: -7px;
+    box-shadow: 0 0 20px -1 rgb(0 0 0 / 70%), 0 128px 107px 0 rgb(0 0 0 / 24%);
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
 }
 
 .form input {
@@ -233,14 +233,3 @@ main > .container {
   min-height: 475px;
 }
 
-.form {
-    position: left;
-    z-index: 1;
-    max-width: 252px;
-    margin: 35px auto -1px;
-    padding: -7px;
-    box-shadow: 0 0 20px -1 rgb(0 0 0 / 70%), 0 128px 107px 0 rgb(0 0 0 / 24%);
-    background-color: white;
-    padding: 50px;
-    border-radius: 20px;
-}
