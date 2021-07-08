@@ -13,7 +13,7 @@ mongoose.connect(MONGO_URI, {
 const pathologies = [
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "None",
         entity: "Papilloma",
@@ -23,7 +23,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenoma",
         entity: "Sclerosing Pneumocytoma",
@@ -32,7 +32,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenoma",
         entity: "Alveolar Adenoma",
@@ -41,7 +41,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenoma",
         entity: "Papillar adenoma",
@@ -50,7 +50,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenoma",
         entity: "Bronchiolar Adenoma",
@@ -59,7 +59,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenoma",
         entity: "Mucinous Cystadenoma",
@@ -68,7 +68,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenoma",
         entity: "Mucous Gland",
@@ -77,7 +77,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenocarcinoma",
         entity: "Minimally Invasive Adenocarcinoma",
@@ -86,7 +86,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenocarcinoma",
         entity: "Invasive non-mucinous adenocarcinoma",
@@ -102,7 +102,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenocarcinoma",
         entity: "Colloid adenocarcinoma​",
@@ -111,7 +111,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenocarcinoma",
         entity: "​Fetal adenocarcinoma​",
@@ -120,7 +120,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenocarcinoma",
         entity: "Enteric-type adenocarcinoma",
@@ -129,7 +129,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Squamous Cell Carcinoma",
         entity: "Lymphoepithelial carcinoma",
@@ -138,7 +138,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "None",
         entity: "Large cell carcinoma",
@@ -147,7 +147,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "None",
         entity: "Adenosquamous carcinoma",
@@ -174,7 +174,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Sarcomatoid Carcinoma",
         entity: "Carcinossarcoma",
@@ -182,7 +182,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Others",
         entity: "NUT carcinoma",
@@ -191,7 +191,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Others",
         entity: "Thoracic SMARC4 deficient undifferenciated tumour",
@@ -209,7 +209,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Salivary gland-type tumours",
         entity: "Adenoid cystic carcinoma",
@@ -218,7 +218,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Salivary gland-type tumours",
         entity: " Epithelial-myoepithelial carcinoma",
@@ -227,7 +227,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Salivary gland-type tumours",
         entity: "Mucoepidermoid carcinoma",

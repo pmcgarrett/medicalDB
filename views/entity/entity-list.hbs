@@ -1,7 +1,9 @@
-<a href="/">main </a><a href="/view">> pathologies</a><a href="/view/{{pathology}}">> organs</a>
-<a href="/view/{{pathology}}/{{organ}}">> types</a><a href="/view/{{pathology}}/{{organ}}/{{type}}">> subtypes</a>
-<a href="/view/{{pathology}}/{{organ}}/{{type}}/{{subtype}}">> entities</a>
-<a href="/view/{{pathology}}/{{organ}}/{{type}}/{{subtype}}/{{entity}}">> {{entity}}</a>
+<a class="header-links" href="/">main </a><a class="header-links" href="/view">> pathologies</a><a class="header-links"
+    href="/view/{{pathology}}">> organs</a>
+<a class="header-links" href="/view/{{pathology}}/{{organ}}">> types</a><a class="header-links"
+    href="/view/{{pathology}}/{{organ}}/{{type}}">> subtypes</a>
+<a class="header-links" href="/view/{{pathology}}/{{organ}}/{{type}}/{{subtype}}">> entities</a>
+<a class="header-links" href="/view/{{pathology}}/{{organ}}/{{type}}/{{subtype}}/{{entity}}">> {{entity}}</a>
 
 
 <div class="card d-flex flex-row" style="width: 55rem; height: 25rem;">
@@ -9,7 +11,14 @@
     <div class="card-body">
         <h5 class="card-title">{{entity}}</h5>
         <p class="card-text">{{description}}</p>
+
+        {{#eq loggedInUser.role "admin"}}
         <a class="btn btn-success" href="/update/{{pathology}}/{{organ}}/{{type}}/{{subtype}}/{{entity}}"
             role="button">Edit</a>
+        {{/eq}}
+        {{#eq loggedInUser.role "doctor"}}
+        <a class="btn btn-success" href="/update/{{pathology}}/{{organ}}/{{type}}/{{subtype}}/{{entity}}"
+            role="button">Edit</a>
+        {{/eq}}
     </div>
 </div>

@@ -1,17 +1,26 @@
 <h1> Admin Page </h1>
-{{#each allUsers}}{{/each}}
 
-<div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      {{#each allUsers}}
-        <h2> {{username}} </h2>
-        <a href="/user/edit/{{_id}}"> edit</a>
-        <form action="/user/delete/{{_id}}" method="post">
-          <button type="submit">delete</button>
-        </form>
-      {{/each}}
-    </li>
+<div>
+  <div class="row">
 
-  </ul>
+    {{#each allUsers}}
+    <div class="col-md-4">
+      <div class="card" style="margin:10px 0; height: 65px;">
+        <div class="card-body">
+          <div class="d-flex flex-row justify-content-between" style="height: 65px;">
+            <h5 class="card-title">{{username}}</h5>
+            <div class="d-flex flex-row align-items-start" style="width: 90px; height:35px">
+              <a class="btn btn-success" href="/user/edit/{{_id}}" role="button">Edit</a>
+              <form action="/user/delete/{{_id}}" method="POST">
+                <button type="submit" style="border: none; background-color: white;">
+                  <img style=" " src="/images/delete_btn.jpg" alt="">
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
 </div>

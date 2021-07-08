@@ -13,7 +13,7 @@ router.post("/signup", fileUpload.single("image"), async (req, res) => {
   if (req.file) {
     fileUrlOnCloudinary = req.file.path;
   }
-  const {username, email, password, name} = req.body;
+  const { username, age, password, name } = req.body;
 
   if (username === "" || password === "") {
     res.render("auth/signup", { errorMessage: "Fill username and password" });
@@ -42,6 +42,7 @@ router.post("/signup", fileUpload.single("image"), async (req, res) => {
   await User.create({
     username,
     name,
+    age,
     password: hashedPassword,
     imageUrl: fileUrlOnCloudinary,
   });
@@ -70,13 +71,13 @@ router.post("/login", async (req, res) => {
     return;
   }
 
-  
+
   if (bcrypt.compareSync(password, user.password)) {
-    
+
     req.session.currentUser = user;
     res.redirect("/");
   } else {
-   
+
     res.render("auth/login", {
       errorMessage: "Invalid login",
     });

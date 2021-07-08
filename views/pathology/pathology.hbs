@@ -1,4 +1,4 @@
-<a href="/">main </a><a href="/view">> pathologies</a>
+<a class="header-links" href="/">main </a><a class="header-links" href="/view">> pathologies</a>
 <h1>Pathology</h1>
 
 
@@ -7,7 +7,7 @@
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
             {{#each allPathlogies}}
-            <div><a href="/view/{{this}}">{{this}}</a></div>
+            <div><a class="pathologies-subtype" href="/view/{{this}}">{{this}}</a></div>
             {{/each}}
         </li>
 

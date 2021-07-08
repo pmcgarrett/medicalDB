@@ -2,6 +2,14 @@ const router = require("express").Router();
 const Pathology = require('../models/Pathology.model.js');
 const fileUpload = require("../config/cloudinary");
 
+function requirePermission(req, res, next) {
+    if (req.session.currentUser && (req.session.currentUser.role === "admin" || req.session.currentUser.role === "doctor")) {
+        next();
+    } else {
+        res.redirect("/");
+    }
+}
+
 
 router.get('/view/:pathology/:organ/:type/:subtype/:entity', async (req, res) => {
 
@@ -12,7 +20,7 @@ router.get('/view/:pathology/:organ/:type/:subtype/:entity', async (req, res) =>
     res.render('entity/entity-list', entityDetails[0]);
 });
 
-router.get('/create/:pathology/:organ/:type/:subtype', async (req, res) => {
+router.get('/create/:pathology/:organ/:type/:subtype', requirePermission, async (req, res) => {
 
     const { pathology, organ, type, subtype } = req.params;
     res.render('entity/entity-create', { pathology, organ, type, subtype })
@@ -39,7 +47,7 @@ router.post('/create/:pathology/:organ/:type/:subtype', fileUpload.single("image
 });
 
 
-router.get('/update/:pathology/:organ/:type/:subtype/:entity', async (req, res) => {
+router.get('/update/:pathology/:organ/:type/:subtype/:entity', requirePermission, async (req, res) => {
     const { entity } = req.params;
 
 
@@ -72,7 +80,7 @@ router.post('/update/:pathology/:organ/:type/:subtype/:id', fileUpload.single("i
 });
 
 
-router.post('/delete/:pathology/:organ/:type/:subtype/:entity', async (req, res) => {
+router.post('/delete/:pathology/:organ/:type/:subtype/:entity', requirePermission, async (req, res) => {
     const { pathology, organ, type, subtype, entity } = req.params;
 
     await Pathology.findOneAndDelete({ entity: entity });

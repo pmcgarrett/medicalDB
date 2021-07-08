@@ -25,7 +25,6 @@
     </form>
 
     {{#if loggedInUser}}
-
     {{#eq loggedInUser.role "user"}}
 
     {{/eq}}
@@ -49,20 +48,36 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
               {{#if loggedInUser}}
-              <li> <a class="dropdown-item" href="/user-create" tabindex="-1" aria-disabled="true">edit account</a>
+              {{#eq loggedInUser.role "user"}}
+              <li>
+                <a class="dropdown-item" href="/user-edit" tabindex="-1" aria-disabled="true">edit account</a>
               </li>
+              {{/eq}}
+              {{#eq loggedInUser.role "doctor"}}
+              <li>
+                <a class="dropdown-item" href="/user-edit" tabindex="-1" aria-disabled="true">edit account</a>
+              </li>
+
+              {{/eq}}
+              {{#eq loggedInUser.role "admin"}}
+              <li>
+                <a class="dropdown-item" href="/admin" tabindex="-1" aria-disabled="true">users profile</a>
+              </li>
+              {{/eq}}
               <form action="/logout" method="POST">
                 <li>
                   <hr class="dropdown-divider" />
                 </li>
                 <button id="logout" type="submit">Logout</button>
-                {{else}}
-                <li> <a class="dropdown-item" href="/signup" tabindex="-1" aria-disabled="true">Sign Up</a> </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li> <a class="dropdown-item" href="/login" tabindex="-1" aria-disabled="true">Login</a> </li>
-                {{/if}}
+              </form>
+              {{else}}
+              <li> <a class="dropdown-item" href="/login" tabindex="-1" aria-disabled="true">Login</a> </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li> <a class="dropdown-item" href="/signup" tabindex="-1" aria-disabled="true">Sign Up</a> </li>
+
+              {{/if}}
             </ul>
           </li>
 
@@ -82,7 +97,7 @@
   </div>
 
 
-  </div>
+
   <main class="flex-shrink-1">
     <div class="container">
       <p class="lead"><code class="small"><code class="small"></code></p>
@@ -90,11 +105,9 @@
   </main>
   <footer class="footer mt-auto py-3 bg-light">
     <div class="container">
-      <span class="text-muted">created by Pedro Santos and João Fonseca</span>
+      <span class="text-muted">created by Pedro Garrett and João Fonseca</span>
     </div>
   </footer>
-
-  <a href="/admin">admin</a>
 
 </body>
 

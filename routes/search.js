@@ -17,9 +17,6 @@ router.get("/search", async (req, res) => {
     } else {
         searchResults = [];
     }
-    console.log("----->>", searchResults);
-
-
 
     res.render("search/search-results", { searchResults, query });
 });
