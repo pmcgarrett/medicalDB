@@ -13,9 +13,8 @@ router.post("/signup", fileUpload.single("image"), async (req, res) => {
   if (req.file) {
     fileUrlOnCloudinary = req.file.path;
   }
-  const { username, email, password, name } = req.body;
+  const {username, email, password, name} = req.body;
 
-  //check if username and password are filled in
   if (username === "" || password === "") {
     res.render("auth/signup", { errorMessage: "Fill username and password" });
     return;
@@ -71,15 +70,13 @@ router.post("/login", async (req, res) => {
     return;
   }
 
-  //Check for password
+  
   if (bcrypt.compareSync(password, user.password)) {
-    //Passwords match
-
-    //Initializing the session with the current user
+    
     req.session.currentUser = user;
     res.redirect("/");
   } else {
-    //Passwords don't match
+   
     res.render("auth/login", {
       errorMessage: "Invalid login",
     });

@@ -13,60 +13,89 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <script src="/js/script.js" defer></script>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a href="/"> <img class="logo" src="/images/logo.png" alt=""> </a>
-  <form class="d-flex" action="/search">
-    <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search" />
-    <button class="btn btn-outline-success" type="submit">Search</button>
-    <a class="btn btn-outline-success" style="width: 165px; margin: 0px 5px;" href="/view" role="button">View All</a>
-  </form>
-  {{#if loggedInUser}}
-  {{#eq loggedInUser.role "user"}}
-  {{/eq}}
-  {{/if}}
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <img src="/images/user.png" alt="">
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {{#if loggedInUser}}
-            <li> <a class="dropdown-item" href="/user-create" tabindex="-1" aria-disabled="true">edit account</a> </li>
-            <form action="/logout" method="POST">
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <button id="logout" type="submit">Logout</button>
-              {{else}}
-              <li> <a class="dropdown-item" href="/signup" tabindex="-1" aria-disabled="true">Sign Up</a> </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li> <a class="dropdown-item" href="/login" tabindex="-1" aria-disabled="true">Login</a> </li>
-              {{/if}}
-          </ul>
-        </li>
-        <li class="nav-item">
-          {{#if loggedInUser}}
-          {{loggedInUser.name}}
-          {{/if}}
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
 <body>
-  {{{body}}}
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="/"> <img class="logo" src="/images/logo.png" alt=""> </a>
+    <form class="d-flex" action="/search">
+      <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search" />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+      <a class="btn btn-outline-success" style="width: 165px; margin: 0px 5px;" href="/view" role="button">View All</a>
+    </form>
+
+    {{#if loggedInUser}}
+
+    {{#eq loggedInUser.role "user"}}
+
+    {{/eq}}
+
+    {{/if}}
+
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img src="/images/user.png" alt="">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              {{#if loggedInUser}}
+              <li> <a class="dropdown-item" href="/user-create" tabindex="-1" aria-disabled="true">edit account</a>
+              </li>
+              <form action="/logout" method="POST">
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <button id="logout" type="submit">Logout</button>
+                {{else}}
+                <li> <a class="dropdown-item" href="/signup" tabindex="-1" aria-disabled="true">Sign Up</a> </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li> <a class="dropdown-item" href="/login" tabindex="-1" aria-disabled="true">Login</a> </li>
+                {{/if}}
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            {{#if loggedInUser}}
+            {{loggedInUser.name}}
+
+            {{/if}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="thebody">
+    {{{body}}}
   </div>
+
+
+  </div>
+  <main class="flex-shrink-1">
+    <div class="container">
+      <p class="lead"><code class="small"><code class="small"></code></p>
+    </div>
+  </main>
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">created by Pedro Santos and João Fonseca</span>
+    </div>
+  </footer>
+
+  <a href="/admin">admin</a>
+
 </body>
 
 </html>
