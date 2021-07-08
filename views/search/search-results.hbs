@@ -1,0 +1,23 @@
+<div>
+    {{#if query}}
+    <h3>Searches for <strong>{{query}}</strong></h3>
+    {{/if}}
+    <div class="row">
+        {{#unless movie}}
+        <h2>No Search results</h2>
+        {{/unless}}
+
+        {{#each searchResults}}
+        <div class="col-md-4">
+            <a href="view/{{pathology}}/{{organ}}/{{type}}/{{subtype}}/{{entity}}">
+                <div class="card" style="margin:10px 0">
+                    <div class="card-body">
+                        
+                        <h5 class="card-title">{{entity}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</div>
