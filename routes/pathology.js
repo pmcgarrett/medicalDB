@@ -44,5 +44,10 @@ router.get('/view/:pathology/:organ/:type/:subtype', async (req, res) => {
 });
 
 
+router.get('/pahtology-create', async (req,res)=> {
+    res.render('pathology/pathology-create');
+});
+
+
 
 module.exports = router;

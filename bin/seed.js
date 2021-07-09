@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Pathology = require('../models/Pathology.model.js');
+const User = require("../models/User.model");
+
 
 // const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/library-project';
 const MONGO_URI = 'mongodb+srv://admin:admin@cluster0.vhy6o.mongodb.net/MedicalDB?retryWrites=true&w=majority';
@@ -94,7 +96,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Adenocarcinoma",
         entity: "Invasive mucinous adenocarcinoma",
@@ -156,7 +158,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Sarcomatoid Carcinoma",
         entity: "Pleomorphic carcinoma",
@@ -165,7 +167,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Sarcomatoid Carcinoma",
         entity: "Pulmonary blastoma",
@@ -200,7 +202,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Salivary gland-type tumours",
         entity: "Pleomorphic adenoma",
@@ -235,7 +237,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Salivary gland-type tumours",
         entity: "Hyalinizing clear cell carcinoma",
@@ -244,7 +246,7 @@ const pathologies = [
     },
     {
         pathology: "Tumor",
-        organ: "Lugs",
+        organ: "Lungs",
         type: "Epithelial",
         subtype: "Salivary gland-type tumours",
         entity: "Myoepithelioma and myoepithelial carcinoma",
@@ -253,9 +255,44 @@ const pathologies = [
     },
 ];
 
+const users = [
+    {
+        username: "admin",
+        name: "Admin",
+        password: "$2a$10$tYkLh2KK680lrjjcO6h9EeOlW2N9QK3oChnkijkZToN.TcUJ7GLy2",
+        role: "admin",
+        age: 99,
+        sex: "female",
+    },
+    {
+        username: "doctor",
+        name: "Doctor",
+        password: "$2a$10$dUyS/2erUP45Obf9mpXgh.lpmzxybIDCnMrz8juA9Uf7LC4C1a60q",
+        role: "doctor",
+        age: 50,
+        sex: "male",
+    },
+    {
+        username: "user",
+        name: "User",
+        password: "$2a$10$qkwnH.t.zG2jjmOMk/u/bu10qvjVqG9YgJUPSxMgZC10hFZ1Zd1lG",
+        role: "user",
+        age: 12,
+        sex: "male",
+    },
+]
+
+
 Pathology.create(pathologies)
     .then(pathologiesFromDB => {
         console.log(`Created ${pathologiesFromDB.length} pathologies on ${MONGO_URI}`);
         mongoose.connection.close();
     })
     .catch(err => console.log(`An error occurred while creating pathologies from the DB: ${err}`));
+
+User.create(users)
+    .then(UsersFromDB => {
+        console.log(`Created ${UsersFromDB.length} users on ${MONGO_URI}`);
+        mongoose.connection.close();
+    })
+    .catch(err => console.log(`An error occurred while creating users from the DB: ${err}`));

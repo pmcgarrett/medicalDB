@@ -19,16 +19,16 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a href="/"> <img class="logo" src="/images/logo.png" alt=""> </a>
     <form class="d-flex" action="/search">
-      <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search" />
+      <input class="form-control me-2" style="width: 220px;" name="q" type="search" placeholder="Search"
+        aria-label="Search" />
       <button class="btn btn-outline-success" type="submit">Search</button>
-      <a class="btn btn-outline-success" style="width: 165px; margin: 0px 5px;" href="/view" role="button">View All</a>
     </form>
-
+    <a class="btn btn-outline-success" style="width: 130px; margin: 0px 5px;" href="/view" role="button">View All</a>
     {{#if loggedInUser}}
-    {{#eq loggedInUser.role "user"}}
-
+    {{#eq loggedInUser.role "admin"}}
+    <a class="btn btn-outline-success" style="width: 225px;" href="/view" role="button">New
+      Pathology</a>
     {{/eq}}
-
     {{/if}}
 
     <div class="container-fluid">
@@ -98,16 +98,12 @@
 
 
 
-  <main class="flex-shrink-1">
+  {{!-- <main class="flex-shrink-1">
     <div class="container">
       <p class="lead"><code class="small"><code class="small"></code></p>
     </div>
-  </main>
-  <footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-      <span class="text-muted">created by Pedro Garrett and João Fonseca</span>
-    </div>
-  </footer>
+  </main> --}}
+
 
 </body>
 
