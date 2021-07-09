@@ -17,7 +17,7 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a href="/"> <img class="logo" src="/images/logo.png" alt=""> </a>
+    <a href="/"> <img class="logo" src="/images/med.png" alt="symbol"> </a>
     <form class="d-flex" action="/search">
       <input class="form-control me-2" style="width: 220px;" name="q" type="search" placeholder="Search"
         aria-label="Search" />
@@ -26,7 +26,7 @@
     <a class="btn btn-outline-success" style="width: 130px; margin: 0px 5px;" href="/view" role="button">View All</a>
     {{#if loggedInUser}}
     {{#eq loggedInUser.role "admin"}}
-    <a class="btn btn-outline-success" style="width: 225px;" href="/view" role="button">New
+    <a class="btn btn-outline-success" style="width: 225px;" href="/pathology-create" role="button">New
       Pathology</a>
     {{/eq}}
     {{/if}}
@@ -39,6 +39,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="d-flex align-items-center" style="margin: 0px 10px;">
+            {{#if loggedInUser}}
+            <h5>Hello {{loggedInUser.name}}!</h5>
+            {{/if}}
+          </div>
+
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -68,7 +74,7 @@
                 <li>
                   <hr class="dropdown-divider" />
                 </li>
-                <button id="logout" type="submit">Logout</button>
+                <button  id="logout" type="submit">Logout</button>
               </form>
               {{else}}
               <li> <a class="dropdown-item" href="/login" tabindex="-1" aria-disabled="true">Login</a> </li>
@@ -81,12 +87,7 @@
             </ul>
           </li>
 
-          <li class="nav-item">
-            {{#if loggedInUser}}
-            {{loggedInUser.name}}
 
-            {{/if}}
-          </li>
         </ul>
       </div>
     </div>

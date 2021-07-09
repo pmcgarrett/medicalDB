@@ -1,3 +1,16 @@
+<div class="tumor-of-the-day">
+    <h1 style="margin-bottom: 20px">Tumor of the Day</h1>
+    <div class="card" style="width: 28rem;">
+        <ul class="list-group list-group-flush">
+            {{pathology}} > {{organ}} > {{type}} > {{subtype}}
+            <li class="list-group-item">
+                <a class="pathologies-subtype"" href=" view/{{pathology}}/{{organ}}/{{type}}/{{subtype}}/{{entity}}">
+                    <div>{{entity}}</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 <div id="backgroundBody"></div>
 <footer class="footer mt-auto py-3 bg-light">
     <div class="container d-flex justify-content-between">

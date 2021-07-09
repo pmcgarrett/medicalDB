@@ -7,7 +7,7 @@
 
 <h1>{{subtype}}</h1>
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 28rem;">
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
             {{#each allEntities }}
@@ -17,19 +17,18 @@
 
                 {{#eq ../loggedInUser.role "admin"}}
                 <form action="/delete/{{../pathology}}/{{../organ}}/{{../type}}/{{../subtype}}/{{this}}" method="POST">
-                    <button type="submit" style="border: none; background-color: white;">
-                        <img style=" " src="/images/delete_btn.jpg" alt="">
+                    <button type="submit" style="border: none; background-color: #C8CECE;">
+                        <img class="delete-image" src="/images/del1.png" alt="delete">
                     </button>
                 </form>
                 {{/eq}}
                 {{#eq ../loggedInUser.role "doctor"}}
                 <form action="/delete/{{../pathology}}/{{../organ}}/{{../type}}/{{../subtype}}/{{this}}" method="POST">
-                    <button type="submit" style="border: none; background-color: white;">
-                        <img style=" " src="/images/delete_btn.jpg" alt="">
+                    <button type="submit" style="border: none; background-color: #C8CECE;">
+                        <img class="delete-image" src="/images/del1.png" alt="delete">
                     </button>
                 </form>
                 {{/eq}}
-
             </div>
             {{/each}}
         </li>

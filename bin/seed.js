@@ -259,6 +259,7 @@ const users = [
     {
         username: "admin",
         name: "Admin",
+        //password is "admin"
         password: "$2a$10$tYkLh2KK680lrjjcO6h9EeOlW2N9QK3oChnkijkZToN.TcUJ7GLy2",
         role: "admin",
         age: 99,
@@ -267,6 +268,7 @@ const users = [
     {
         username: "doctor",
         name: "Doctor",
+        //password is "doctor"
         password: "$2a$10$dUyS/2erUP45Obf9mpXgh.lpmzxybIDCnMrz8juA9Uf7LC4C1a60q",
         role: "doctor",
         age: 50,
@@ -275,6 +277,7 @@ const users = [
     {
         username: "user",
         name: "User",
+        //password is "user"
         password: "$2a$10$qkwnH.t.zG2jjmOMk/u/bu10qvjVqG9YgJUPSxMgZC10hFZ1Zd1lG",
         role: "user",
         age: 12,

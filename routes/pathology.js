@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Pathology = require('../models/Pathology.model.js');
+const fileUpload = require("../config/cloudinary");
 
 
 router.get("/view", async (req, res) => {
@@ -44,9 +45,28 @@ router.get('/view/:pathology/:organ/:type/:subtype', async (req, res) => {
 });
 
 
-router.get('/pahtology-create', async (req,res)=> {
+router.get('/pathology-create', async (req, res) => {
     res.render('pathology/pathology-create');
 });
+
+router.post('/pathology-create', fileUpload.single("image"), async (req, res) => {
+    const { pathology, organ, type, subtype, entity, description } = req.body;
+
+    let fileUrlOnCloudinary = "";
+    if (req.file) {
+        fileUrlOnCloudinary = req.file.path;
+    } else {
+        fileUrlOnCloudinary = 'https://res.cloudinary.com/dl0iv6p9x/image/upload/v1625561096/no_image_available_fah5ho.jpg';
+    }
+
+    await Pathology.create({
+        pathology, organ, type, subtype, entity, description,
+        macroImg: fileUrlOnCloudinary,
+    });
+
+    res.redirect("/");
+});
+
 
 
 
