@@ -21,13 +21,13 @@ router.post("/signup", fileUpload.single("image"), async (req, res) => {
   }
 
   //check for password strength
-  /* const myRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+  const myRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (myRegex.test(password) === false) {
     res.render("auth/signup", {
       errorMessage: "Password is too weak",
     });
     return;
-  } */
+  }
 
   //check if username already exists
   const user = await User.findOne({ username });

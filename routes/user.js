@@ -11,15 +11,13 @@ function requireAdmin(req, res, next) {
 
 
 router.get("/user-edit", async (req, res) => {
-  const currentUser = await User.findOne(req.session.currentUser);
+  const currentUser = await User.findById(req.session.currentUser._id)
   res.render("user/user-edit", currentUser);
 });
 
 router.post("/user-edit/:id", async (req, res) => {
 
   const { name, age, sex, role } = req.body;
-
-  
 
   await User.findByIdAndUpdate(req.params.id, {
     name,
@@ -33,13 +31,11 @@ router.post("/user-edit/:id", async (req, res) => {
 
 router.get("/admin", requireAdmin, async (req, res) => {
   const allUsers = await User.find();
-  console.log(allUsers);
   res.render('user/admin', { allUsers });
 })
 
 router.get("/user/edit/:id", async (req, res) => {
   const currentUser = await User.findById(req.params.id);
-  console.log("----->", currentUser);
   res.render('user/user-edit', currentUser);
 });
 
